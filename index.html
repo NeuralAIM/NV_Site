@@ -3,93 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeuralVision 1.0 - Карта захвата для AI</title>
+    <title data-key="pageTitle">NVision 1.0 - Карта захвата для AI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="particles-js"></div>
 
     <header class="site-header">
-        <nav class="nav-container">
-            <div class="main-nav">
+        <div class="nav-container">
+            <a href="#hero" class="logo">NVision</a>
+            <nav class="main-nav">
                 <ul>
-                    <li><a href="#advantage">Преимущество</a></li>
-                    <li><a href="#spoofer">Spoofer</a></li>
-                    <li><a href="#specs">Характеристики</a></li>
-                    <li><a href="#ports">Комплектация</a></li>
+                    <li><a href="#advantage" data-key="navAdvantage">Преимущество</a></li>
+                    <li><a href="#spoofer" data-key="navSpoofer">Spoofer</a></li>
+                    <li><a href="#specs" data-key="navSpecs">Характеристики</a></li>
+                    <li><a href="#ports" data-key="navPorts">Комплектация</a></li>
                 </ul>
+            </nav>
+            <div class="header-controls">
+                <div class="lang-switcher">
+                    <button data-lang="ru" class="active">RU</button>
+                    <span>/</span>
+                    <button data-lang="en">EN</button>
+                </div>
+                <button class="mobile-nav-toggle" aria-label="Открыть меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-        </nav>
+        </div>
     </header>
 
     <main class="main-container">
-
-        <!-- 1. HERO СЕКЦИЯ -->
         <section class="section hero-section" id="hero">
             <div class="presentation-grid">
                 <div class="info-column animate-item" style="--delay: 0.1s;">
-                    <div class="info-tag">Карта захвата для AI</div>
+                    <div class="info-tag" data-key="heroTag">Карта захвата для AI</div>
                     <h1>NVision 1.0</h1>
-                    <p class="subtitle">Новая карта захвата, созданная специально для работы с AI-ассистентами и записи видео.</p>
+                    <p class="subtitle" data-key="heroSubtitle">Новая карта захвата, созданная специально для работы с AI-ассистентами и записи видео.</p>
                     <div class="features-list">
-                        <div class="feature-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg><span>Минимальная задержка</span></div>
-                        <div class="feature-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg><span>Поддержка - HDCP & EDID</span></div>
-                        <div class="feature-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg><span>UVC - Не требует драйверов</span></div>
+                        <div class="feature-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg><span data-key="feature1">Минимальная задержка</span></div>
+                        <div class="feature-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg><span data-key="feature2">Поддержка - HDCP & EDID</span></div>
+                        <div class="feature-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg><span data-key="feature3">UVC - Не требует драйверов</span></div>
                     </div>
-                    <div class="price-block"><span class="price-label">Цена от:</span><span class="price-value">11 499₽ <span class="alt-price">/ 149$</span></span></div>
+                    <div class="price-block">
+                        <span class="price-label" data-key="priceLabel">Цена от:</span>
+                        <div class="price-value-container">
+                            <span id="main-price" class="price-value"></span>
+                            <span id="alt-price" class="alt-price"></span>
+                        </div>
+                    </div>
                 </div>
                 <div class="diagram-column-final animate-item" style="--delay: 0.3s;">
-                    <div class="diagram-node" id="node-pc"><div class="diagram-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="12" y="4" width="40" height="56" rx="4" stroke-width="3"/><path d="M24 14H40" stroke-width="3" stroke-linecap="round"/><path d="M24 22H32" stroke-width="3" stroke-linecap="round"/></svg></div><div class="diagram-label">Ваш ПК</div></div>
+                    <div class="diagram-node" id="node-pc"><div class="diagram-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="12" y="4" width="40" height="56" rx="4" stroke-width="3"/><path d="M24 14H40" stroke-width="3" stroke-linecap="round"/><path d="M24 22H32" stroke-width="3" stroke-linecap="round"/></svg></div><div class="diagram-label" data-key="diagYourPC">Ваш ПК</div></div>
                     <div class="diagram-node" id="node-card"><div class="diagram-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="20" width="48" height="24" rx="3" stroke-width="3"/><path d="M16 28H20" stroke-width="3" stroke-linecap="round"/><path d="M16 36H20" stroke-width="3" stroke-linecap="round"/><path d="M44 32H48" stroke-width="3" stroke-linecap="round"/></svg></div><div class="diagram-label" id="capture-info-display"></div></div>
-                    <div class="diagram-node" id="node-stream"><div class="diagram-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 44V15C8 12.7909 9.79086 11 12 11H52C54.2091 11 56 12.7909 56 15V44" stroke-width="3" stroke-linecap="round"/><path d="M4 48H60" stroke-width="3" stroke-linecap="round"/></svg></div><div class="diagram-label">NeuralPC (AI)</div></div>
-                    <div class="diagram-node" id="node-monitor"><div class="diagram-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="12" width="48" height="32" rx="3" stroke-width="3"/><path d="M24 44L32 54L40 44" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="diagram-label">Монитор</div></div>
+                    <div class="diagram-node" id="node-stream"><div class="diagram-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 44V15C8 12.7909 9.79086 11 12 11H52C54.2091 11 56 12.7909 56 15V44" stroke-width="3" stroke-linecap="round"/><path d="M4 48H60" stroke-width="3" stroke-linecap="round"/></svg></div><div class="diagram-label" data-key="diagNeuralPC">NeuralPC (AI)</div></div>
+                    <div class="diagram-node" id="node-monitor"><div class="diagram-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="12" width="48" height="32" rx="3" stroke-width="3"/><path d="M24 44L32 54L40 44" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="diagram-label" data-key="diagMonitor">Монитор</div></div>
                     <svg class="connector-svg"><path id="path-pc-to-card-base" class="connector-base" /><path id="path-pc-to-card-flow" class="connector-flow" /><path id="path-card-to-split-base" class="connector-base" /><path id="path-card-to-split-flow" class="connector-flow" /><path id="path-split-to-stream-base" class="connector-base" /><path id="path-split-to-stream-flow" class="connector-flow" /><path id="path-split-to-monitor-base" class="connector-base" /><path id="path-split-to-monitor-flow" class="connector-flow" /></svg>
                 </div>
                 <div class="card-column animate-item" style="--delay: 0.5s;">
                     <div class="spec-card">
-                        <div class="spec-header"><div class="spec-icon-wrapper"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></div><span class="spec-title">Режимы захвата</span></div>
-                        <div class="spec-list" id="spec-list">
-                            <div class="spec-item" data-spec="1080p" data-fps="240"><div class="spec-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect></svg></div><div class="spec-item-text"><span class="main-spec">1080p@240fps</span><span class="sub-spec">FullHD</span></div></div>
-                            <div class="spec-item" data-spec="1440p" data-fps="144"><div class="spec-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect></svg></div><div class="spec-item-text"><span class="main-spec">1440p@144fps</span><span class="sub-spec">2K</span></div></div>
+                        <div class="spec-header"><div class="spec-icon-wrapper"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></div><span class="spec-title" data-key="captureModes">Режимы захвата</span></div>
+                        
+                        <div class="spec-list-scrollable" id="spec-list">
+                            <div class="spec-group-header">2160p (4K)</div>
                             <div class="spec-item" data-spec="2160p" data-fps="60"><div class="spec-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect></svg></div><div class="spec-item-text"><span class="main-spec">2160p@60fps</span><span class="sub-spec">4K</span></div></div>
+                            
+                            <div class="spec-group-header">1440p (2K)</div>
+                            <div class="spec-item" data-spec="1440p" data-fps="144"><div class="spec-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect></svg></div><div class="spec-item-text"><span class="main-spec">1440p@144fps</span><span class="sub-spec">2K</span></div></div>
+                            <div class="spec-item" data-spec="1440p" data-fps="120"><div class="spec-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect></svg></div><div class="spec-item-text"><span class="main-spec">1440p@120fps</span><span class="sub-spec">2K</span></div></div>
+                            <div class="spec-item" data-spec="1440p" data-fps="60"><div class="spec-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect></svg></div><div class="spec-item-text"><span class="main-spec">1440p@60fps</span><span class="sub-spec">2K</span></div></div>
+
+                            <div class="spec-group-header">1080p (FullHD)</div>
+                            <div class="spec-item" data-spec="1080p" data-fps="240"><div class="spec-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect></svg></div><div class="spec-item-text"><span class="main-spec">1080p@240fps</span><span class="sub-spec">FullHD</span></div></div>
+                            <div class="spec-item" data-spec="1080p" data-fps="144"><div class="spec-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect></svg></div><div class="spec-item-text"><span class="main-spec">1080p@144fps</span><span class="sub-spec">FullHD</span></div></div>
+                            <div class="spec-item" data-spec="1080p" data-fps="120"><div class="spec-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect></svg></div><div class="spec-item-text"><span class="main-spec">1080p@120fps</span><span class="sub-spec">FullHD</span></div></div>
+                            <div class="spec-item" data-spec="1080p" data-fps="60"><div class="spec-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect></svg></div><div class="spec-item-text"><span class="main-spec">1080p@60fps</span><span class="sub-spec">FullHD</span></div></div>
                         </div>
-                        <div class="spec-footer">Монитор может получать до 8K@60fps (HDMI 2.1), вне зависимости от разрешения и частоты захвата.</div>
+                        <div class="spec-footer" data-key="specFooter">Монитор может получать до 8K@60fps (HDMI 2.1), вне зависимости от разрешения и частоты захвата.</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 2. СЕКЦИЯ "ПОЧЕМУ ЭТА КАРТА?" -->
         <section class="section scroll-animate" id="advantage">
-            <h2>Невидимое <span class="highlight">преимущество</span> на базе AI</h2>
-            <p class="section-subtitle">NVision 1.0 передает "чистое" изображение с вашего игрового ПК на второй компьютер, где AI анализирует каждый кадр. Это позволяет нейросети работать незаметно для античит-систем.</p>
+            <h2 data-key="advantageTitle">Невидимое <span class="highlight">преимущество</span> на базе AI</h2>
+            <p class="section-subtitle" data-key="advantageSubtitle">NVision 1.0 передает "чистое" изображение с вашего игрового ПК на второй компьютер, где AI анализирует каждый кадр. Это позволяет нейросети работать незаметно для античит-систем.</p>
             <div class="advantage-grid">
                 <div class="advantage-text">
-                    <p><strong>Абсолютная незаметность.</strong> Карта захвата работает на аппаратном уровне, дублируя видеосигнал до того, как он попадет под контроль операционной системы и античитов. Для игрового ПК это выглядит так, будто к нему просто подключен один монитор.</p>
-                    <p><strong>Нулевая задержка для вас.</strong> Благодаря технологии HDMI 2.1 Pass-through, вы играете на своем мониторе без малейших задержек, в то время как копия изображения в реальном времени отправляется на анализ нейросети.</p>
-                    <p><strong>Максимальная производительность.</strong> Вся нагрузка по обработке видео и работе AI ложится на второй ПК. Ваш игровой компьютер свободен и выдает максимальный FPS, не отвлекаясь на посторонние задачи.</p>
+                    <p><strong data-key="advPoint1Title">Абсолютная незаметность.</strong> <span data-key="advPoint1Text">Карта захвата работает на аппаратном уровне, дублируя видеосигнал до того, как он попадет под контроль операционной системы и античитов. Для игрового ПК это выглядит так, будто к нему просто подключен один монитор.</span></p>
+                    <p><strong data-key="advPoint2Title">Нулевая задержка для вас.</strong> <span data-key="advPoint2Text">Благодаря технологии HDMI 2.1 Pass-through, вы играете на своем мониторе без малейших задержек, в то время как копия изображения в реальном времени отправляется на анализ нейросети.</span></p>
+                    <p><strong data-key="advPoint3Title">Максимальная производительность.</strong> <span data-key="advPoint3Text">Вся нагрузка по обработке видео и работе AI ложится на второй ПК. Ваш игровой компьютер свободен и выдает максимальный FPS, не отвлекаясь на посторонние задачи.</span></p>
                 </div>
                 <div class="advantage-image">
-                    <img src="1.jpg" alt="Коробка и характеристики NeuralVision 1.0">
+                    <img src="1.jpg" alt="Коробка и характеристики NVision 1.0">
                 </div>
             </div>
         </section>
 
-        <!-- 3. СЕКЦИЯ "SPOOFER" -->
         <section class="section scroll-animate" id="spoofer">
-            <h2>Встроенный <span class="highlight">EDID Spoofer</span></h2>
-            <p class="section-subtitle">Карта захвата остаётся полностью невидимой для системы, маскируя себя под ваш основной монитор.</p>
+            <h2 data-key="spooferTitle">Встроенный <span class="highlight">EDID Spoofer</span></h2>
+            <p class="section-subtitle" data-key="spooferSubtitle">Карта захвата остаётся полностью невидимой для системы, маскируя себя под ваш основной монитор.</p>
             <div class="spoofer-grid">
                 <div class="spoofer-card">
-                    <h3><svg class="icon-cross" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>Обычная карта захвата</h3>
-                    <p>Определяется системой как "Карта захвата", "USB Video Device" и т.д. Продвинутые античиты могут легко обнаружить такое устройство и заблокировать его. Вы подвергаете себя и свой аккаунт неоправданному риску.</p>
+                    <h3>
+                        <svg class="icon-cross" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        <span data-key="spooferCard1Title">Обычная карта захвата</span>
+                    </h3>
+                    <p data-key="spooferCard1Text">Определяется системой как "Карта захвата", "USB Video Device" и т.д. Продвинутые античиты могут легко обнаружить такое устройство и заблокировать его. Вы подвергаете себя и свой аккаунт неоправданному риску.</p>
                 </div>
                 <div class="spoofer-card highlighted">
-                    <h3><svg class="icon-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>NeuralVision 1.0</h3>
-                    <p>Автоматически копирует EDID и т.д. вашего монитора. Для игрового ПК карта захвата и ваш монитор — это <strong>одно и то же устройство.</strong></p>
-                    <!-- ИЗМЕНЕНО: Блок с анимацией -->
+                    <h3>
+                        <svg class="icon-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>NeuralVision 1.0</span>
+                    </h3>
+                    <p data-key="spooferCard2Text">Автоматически копирует EDID и т.д. вашего монитора. Для игрового ПК карта захвата и ваш монитор — это <strong>одно и то же устройство.</strong></p>
+                    
                     <div class="spoofer-animation">
                         <p class="anim-status-text"></p>
                         
@@ -98,7 +131,7 @@
                         
                         <div class="anim-node anim-pc">
                             <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="12" y="4" width="40" height="56" rx="4"/><path d="M24 14H40" stroke-linecap="round"/><path d="M24 22H32" stroke-linecap="round"/></svg>
-                            <span>Игровой ПК</span>
+                            <span data-key="animGamingPC">Игровой ПК</span>
                         </div>
                         
                         <div class="anim-node anim-card">
@@ -108,84 +141,51 @@
                             </div>
                             <div class="card-text-wrapper">
                                 <span class="original-card-text">NeuralVision</span>
-                                <span class="spoofed-card-text">Ваш Монитор</span>
+                                <span class="spoofed-card-text" data-key="animYourMonitor">Ваш Монитор</span>
                             </div>
                         </div>
                         
                         <div class="anim-node anim-monitor">
                             <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="12" width="48" height="32" rx="3"/><path d="M24 44L32 54L40 44" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            <span>Ваш Монитор</span>
+                            <span data-key="animYourMonitor">Ваш Монитор</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. СЕКЦИЯ "ТЕХНИЧЕСКИЕ ХАРАКТЕРИСТИКИ" -->
         <section class="section scroll-animate" id="specs">
-            <h2>Технические <span class="highlight">характеристики</span></h2>
-            <!-- ИЗМЕНЕНО: Полностью переработанный блок -->
+            <h2 data-key="specsTitle">Технические <span class="highlight">характеристики</span></h2>
             <div class="tech-specs-container">
                 <ul class="tech-specs-list">
-                    <li class="tech-spec-item">
-                        <span class="spec-name"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>Интерфейс</span>
-                        <span class="spec-value">USB 3.2 (Gen 1) Type-C</span>
-                    </li>
-                    <li class="tech-spec-item">
-                        <span class="spec-name"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>Pass-Through</span>
-                        <span class="spec-value">2160p60 HDR / 1080p240</span>
-                    </li>
-                    <li class="tech-spec-item">
-                        <span class="spec-name"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>Видео вход/выход</span>
-                        <span class="spec-value">HDMI™ 2.1</span>
-                    </li>
-                     <li class="tech-spec-item">
-                        <span class="spec-name"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>Поддержка VRR</span>
-                        <span class="spec-value">Да (48-120 Hz)</span>
-                    </li>
-                    <li class="tech-spec-item">
-                        <span class="spec-name"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>Аудио порты</span>
-                        <span class="spec-value">Line-in, Headset (CTIA)</span>
-                    </li>
-                    <li class="tech-spec-item">
-                        <span class="spec-name"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>Max захват</span>
-                        <span class="spec-value">2160p60 / 1440p144</span>
-                    </li>
-                    <li class="tech-spec-item">
-                        <span class="spec-name"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><line x1="12" y1="16" x2="12" y2="10"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>Поддержка HDCP</span>
-                        <span class="spec-value">Отключен (2.3 / 1.4)</span>
-                    </li>
-                    <li class="tech-spec-item">
-                        <span class="spec-name"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>Формат видео</span>
-                        <span class="spec-value">YUY2, NV12, MJPG, RGB24, P010 (HDR)</span>
-                    </li>
-                    <li class="tech-spec-item">
-                        <span class="spec-name"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>EDID Spoofer</span>
-                        <span class="spec-value">Встроенный, автоматический</span>
-                    </li>
-                    <li class="tech-spec-item">
-                        <span class="spec-name"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="12" x2="2" y2="12"></line><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path><line x1="6" y1="16" x2="6.01" y2="16"></line><line x1="10" y1="16" x2="10.01" y2="16"></line></svg>Вес</span>
-                        <span class="spec-value">228 г</span>
-                    </li>
+                    <li class="tech-spec-item"><span class="spec-name"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg><span data-key="specNameInterface">Интерфейс</span></span><span class="spec-value">USB 3.2 (Gen 1) Type-C</span></li>
+                    <li class="tech-spec-item"><span class="spec-name"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><span data-key="specNamePassthrough">Pass-Through</span></span><span class="spec-value">2160p60 HDR / 1080p240</span></li>
+                    <li class="tech-spec-item"><span class="spec-name"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg><span data-key="specNameVideoIO">Видео вход/выход</span></span><span class="spec-value">HDMI™ 2.1</span></li>
+                    <li class="tech-spec-item"><span class="spec-name"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg><span data-key="specNameVRR">Поддержка VRR</span></span><span class="spec-value" data-key="specValueVRR">Да (48-120 Hz)</span></li>
+                    <li class="tech-spec-item"><span class="spec-name"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg><span data-key="specNameAudio">Аудио порты</span></span><span class="spec-value">Line-in, Headset (CTIA)</span></li>
+                    <li class="tech-spec-item"><span class="spec-name"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg><span data-key="specNameMaxCapture">Max захват</span></span><span class="spec-value">2160p60 / 1440p144</span></li>
+                    <li class="tech-spec-item"><span class="spec-name"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><line x1="12" y1="16" x2="12" y2="10"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg><span data-key="specNameHDCP">Поддержка HDCP</span></span><span class="spec-value" data-key="specValueHDCP">Отключен (2.3 / 1.4)</span></li>
+                    <li class="tech-spec-item"><span class="spec-name"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg><span data-key="specNameFormat">Формат видео</span></span><span class="spec-value">YUY2, NV12, MJPG, RGB24, P010 (HDR)</span></li>
+                    <li class="tech-spec-item"><span class="spec-name"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg><span data-key="specNameEDID">EDID Spoofer</span></span><span class="spec-value" data-key="specValueEDID">Встроенный, автоматический</span></li>
+                    <li class="tech-spec-item"><span class="spec-name"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="12" x2="2" y2="12"></line><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path><line x1="6" y1="16" x2="6.01" y2="16"></line><line x1="10" y1="16" x2="10.01" y2="16"></line></svg><span data-key="specNameWeight">Вес</span></span><span class="spec-value">228 г</span></li>
                 </ul>
             </div>
         </section>
 
-        <!-- 5. СЕКЦИЯ "ПОРТЫ И КОМПЛЕКТАЦИЯ" -->
         <section class="section scroll-animate" id="ports">
-            <h2>Упаковка и <span class="highlight">комплектация</span></h2>
+            <h2 data-key="portsTitle">Упаковка и <span class="highlight">комплектация</span></h2>
             <div class="ports-grid">
                 <div class="ports-image-wrapper">
-                    <img src="2.jpg" alt="Порты на карте захвата NeuralVision 1.0">
-                    <p>Все необходимые порты для профессионального сетапа.</p>
+                    <img src="2.jpg" alt="Порты на карте захвата NVision 1.0">
+                    <p data-key="portsSubtitle">Всё что необходимо стримеру и читеру уже здесь.</p>
                 </div>
                 <div>
-                    <h3>Что в коробке:</h3>
+                    <h3 data-key="boxTitle">Что в коробке:</h3>
                     <ul class="box-contents-list">
-                        <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>Карта захвата NeuralVision 1.0</li>
-                        <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>Инструкция по подключению</li>
-                        <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path><line x1="12" y1="2" x2="12" y2="5"></line></svg>Кабель HDMI 2.1 (1.5м)</li>
-                        <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>Кабель USB Type-C to Type-A (1.5м)</li>
+                        <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg><span data-key="boxItem1">Карта захвата NVision 1.0</span></li>
+                        <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg><span data-key="boxItem2">Инструкция по подключению</span></li>
+                        <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path><line x1="12" y1="2" x2="12" y2="5"></line></svg><span data-key="boxItem3">Кабель HDMI 2.1 (1.5м)</span></li>
+                        <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg><span data-key="boxItem4">Кабель USB Type-C to Type-A (1.5м)</span></li>
                     </ul>
                 </div>
             </div>
@@ -197,7 +197,8 @@
         <p>Made by NeuralAIM © 2025.</p>
         <p><a href="https://neuralvision.ru" target="_blank">NeuralVision.ru</a></p>
     </footer>
-
+    
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
