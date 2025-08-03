@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             specNameVideoIO: "Video In/Out",
             specNameVRR: "VRR Support",
             specNameAudio: "Audio Ports",
-            specNameMaxCapture: "Max Capture",
+            specNameMaxCapture: "Capture video",
             specNameHDCP: "HDCP Support",
             specValueHDCP: "Disabled (2.3 / 1.4)",
             specNameFormat: "Video Format",
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
             specNameVideoIO: "Видео вход/выход",
             specNameVRR: "Поддержка VRR",
             specNameAudio: "Аудио порты",
-            specNameMaxCapture: "Max захват",
+            specNameMaxCapture: "Запись видео",
             specNameHDCP: "Поддержка HDCP",
             specValueHDCP: "Отключен (2.3 / 1.4)",
             specNameFormat: "Формат видео",
@@ -350,8 +350,8 @@ document.addEventListener('DOMContentLoaded', () => {
         let newDuration;
         switch (spec) {
             case '1080p': newDuration = 0.2; break;
-            case '1440p': newDuration = 0.5; break;
-            case '2160p': newDuration = 1.0; break;
+            case '1440p': newDuration = 0.2; break;
+            case '2160p': newDuration = 0.2; break;
             default: newDuration = 0.2;
         }
         const streamPaths = [pathPcToCardFlow, pathCardToSplitFlow, pathSplitToStreamFlow];
