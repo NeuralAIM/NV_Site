@@ -374,7 +374,7 @@ h2 .highlight { color: var(--accent-color); }
 .spec-list-scrollable {
     flex-grow: 1;
     overflow-y: auto;
-    max-height: 400px;
+    max-height: 454px;
     padding-right: 10px;
     margin-right: -10px;
 }
