@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const translations = {
         en: {
-            pageTitle: "NVision 1.0 - Capture Card for AI",
+            pageTitle: "NVision 1.0 - Capture Card",
             navAdvantage: "Advantage",
             navSpoofer: "Security",
             navSpecs: "Specifications",

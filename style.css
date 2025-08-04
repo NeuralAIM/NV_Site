@@ -1,4 +1,3 @@
-/* --- Переменные и Глобальные стили --- */
 :root {
     --bg-color: #111113;
     --card-bg: #1C1C1F;
@@ -39,7 +38,6 @@ html {
 html { scroll-behavior: smooth; }
 body { background-color: var(--bg-color); color: var(--text-primary); font-family: var(--font-family); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; overflow-x: hidden; padding-top: var(--header-height); }
 
-/* --- СТИЛИ ДЛЯ ФОНОВЫХ ЧАСТИЦ --- */
 #particles-js {
     position: fixed;
     width: 100%;
@@ -425,7 +423,7 @@ h2 .highlight { color: var(--accent-color); }
 .naim-indicator {
     position: absolute;
     top: 27px;
-    left: 49.5%;
+    left: 50%;
     transform: translate(-50%, -50%);
     color: var(--accent-color);
     font-weight: 700;
