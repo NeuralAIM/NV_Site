@@ -1,4 +1,4 @@
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
     const translations = {
         en: {
@@ -7,6 +7,8 @@ window.addEventListener('load', () => {
             navSpoofer: "Security",
             navSpecs: "Specifications",
             navPorts: "In the Box",
+            navNaim: "NAIM",
+            navNeuralPC: "NeuralPC",
             heroTag: "Capture Card for AI",
             heroSubtitle: "A new capture card designed specifically for AI assistants and video recording.",
             feature1: "Minimal Latency",
@@ -39,7 +41,7 @@ window.addEventListener('load', () => {
             specNameAudio: "Audio Ports",
             specNameMaxCapture: "Capture video",
             specNameHDCP: "HDCP Support",
-            specValueHDCP: "Yes (2.3 / 1.4)",
+            specValueHDCP: "Disabled (2.3 / 1.4)",
             specNameFormat: "Video Format",
             specNameEDID: "EDID Spoofer",
             specValueEDID: "Built-in, automatic",
@@ -51,13 +53,7 @@ window.addEventListener('load', () => {
             boxItem2: "Connection Guide",
             boxItem3: "HDMI 2.1 Cable (1.5m)",
             boxItem4: "USB Type-C to Type-A Cable (1.5m)",
-            specNameVRR: "VRR Support",
             specValueVRR: "Yes (48-120 Hz)",
-            spooferTitle: "Built-in <span class='highlight'>EDID Spoofer</span>",
-            spooferSubtitle: "The capture card remains completely invisible to the system, masking itself as your primary monitor.",
-            spooferCard1Title: "Regular Capture Card",
-            spooferCard1Text: "Detected by the system as 'Capture Card', 'USB Video Device', etc. Advanced anti-cheats can easily detect such a device and block it. You expose yourself and your account to unnecessary risk.",
-            spooferCard2Text: "Automatically copies the EDID, etc., of your monitor. To the gaming PC, the capture card and your monitor are <strong>the same device.</strong>",
             animGamingPC: "Gaming PC",
             animYourMonitor: "Your Monitor",
             animStatus1: "Waiting...",
@@ -65,6 +61,34 @@ window.addEventListener('load', () => {
             animStatus3: "2. EDID copied! Masking...",
             animStatus4: "3. Sending spoofed data to PC...",
             animStatus5: "Done! System sees only the monitor.",
+            naimTitle: "NAIM - <span class='highlight'>Neural Network</span> Assistant",
+            naimSubtitle: "Artificial intelligence that assists your aim by analyzing the screen image and moving the mouse with human-like precision and smoothness.",
+            naimFeaturesTitle: "Key Features",
+            naimFeature1: "Movements indistinguishable from a human.",
+            naimFeature2: "Does not inject into the game process or read memory.",
+            naimFeature3: "Maximum security and protection against detection.",
+            naimFeature4: "Supports 1PC and 2PC configurations.",
+            naimPricingTitle: "Pricing Plans",
+            naimPrice7d: "7 days",
+            naimPrice14d: "14 days",
+            naimPrice30d: "30 days",
+            buyButton: "Purchase",
+            neuralpcTitle: "Mini PC <span class='highlight'>NeuralPC</span>",
+            neuralpcSubtitle: "A compact and powerful computing unit designed for AI models. Works out-of-the-box without needing a monitor or peripherals.",
+            neuralpcPanelTitle: "Control Panel",
+            neuralpcPanelDesc: "Manage all NeuralPC functions through a convenient web interface from any device — phone or computer. No extra wires or monitors.",
+            neuralpcFeature1: "Remote control and file manager.",
+            neuralpcFeature2: "Interface customization (RU/EN).",
+            neuralpcFeature3: "Quick launch of AI models and scripts.",
+            neuralpcSetupNote: "<strong>Easy Setup:</strong> on first power-up, simply connect to the 'NeuralPC' Wi-Fi network for full access to the device.",
+            neuralpcSpecWifi: "Connectivity",
+            neuralpcSpecCPU: "CPU",
+            neuralpcSpecRAM: "RAM",
+            neuralpcSpecROM: "ROM",
+            neuralpcSpecIO: "I/O",
+            neuralpcFootnote1: "*With enhanced performance.",
+            neuralpcFootnote2: "**Removable, can be replaced.",
+            neuralpcPriceLabel: "Price from:",
         },
         ru: {
             pageTitle: "NVision 1.0 - Карта захвата для AI",
@@ -72,6 +96,8 @@ window.addEventListener('load', () => {
             navSpoofer: "Безопасность",
             navSpecs: "Характеристики",
             navPorts: "Комплектация",
+            navNaim: "NAIM",
+            navNeuralPC: "NeuralPC",
             heroTag: "Карта захвата для AI",
             heroSubtitle: "Новая карта захвата, созданная специально для работы с AI-ассистентами и записи видео.",
             feature1: "Минимальная задержка",
@@ -94,7 +120,7 @@ window.addEventListener('load', () => {
             spooferTitle: "Встроенный <span class='highlight'>EDID Spoofer</span>",
             spooferSubtitle: "Карта захвата остаётся полностью невидимой для системы, маскируя себя под ваш основной монитор.",
             spooferCard1Title: "Обычная карта захвата",
-            spooferCard1Text: "Определяется системой как 'Карта захвата', 'USB Video Device' и т.д. Продвинутые античиты могут легко обнаружить такое устройство и заблокировать его. Вы подвергаете себя и свой аккаунт неоправданному риску.",
+            spooferCard1Text: "Определяется системой как \"Карта захвата\", \"USB Video Device\" и т.д. Продвинутые античиты могут легко обнаружить такое устройство и заблокировать его. Вы подвергаете себя и свой аккаунт неоправданному риску.",
             spooferCard2Text: "Автоматически копирует EDID и т.д. вашего монитора. Для игрового ПК карта захвата и ваш монитор — это <strong>одно и то же устройство.</strong>",
             specsTitle: "Технические <span class='highlight'>характеристики</span>",
             specNameInterface: "Интерфейс",
@@ -104,7 +130,7 @@ window.addEventListener('load', () => {
             specNameAudio: "Аудио порты",
             specNameMaxCapture: "Запись видео",
             specNameHDCP: "Поддержка HDCP",
-            specValueHDCP: "Есть (2.3 / 1.4)",
+            specValueHDCP: "Отключен (2.3 / 1.4)",
             specNameFormat: "Формат видео",
             specNameEDID: "EDID Spoofer",
             specValueEDID: "Встроенный, автоматический",
@@ -116,13 +142,7 @@ window.addEventListener('load', () => {
             boxItem2: "Инструкция по подключению",
             boxItem3: "Кабель HDMI 2.1 (1.5м)",
             boxItem4: "Кабель USB Type-C to Type-A (1.5м)",
-            specNameVRR: "Поддержка VRR",
             specValueVRR: "Да (48-120 Hz)",
-            spooferTitle: "Встроенный <span class='highlight'>EDID Spoofer</span>",
-            spooferSubtitle: "Карта захвата остаётся полностью невидимой для системы, маскируя себя под ваш основной монитор.",
-            spooferCard1Title: "Обычная карта захвата",
-            spooferCard1Text: "Определяется системой как \"Карта захвата\", \"USB Video Device\" и т.д. Продвинутые античиты могут легко обнаружить такое устройство и заблокировать его. Вы подвергаете себя и свой аккаунт неоправданному риску.",
-            spooferCard2Text: "Автоматически копирует EDID и т.д. вашего монитора. Для игрового ПК карта захвата и ваш монитор — это <strong>одно и то же устройство.</strong>",
             animGamingPC: "Игровой ПК",
             animYourMonitor: "Ваш Монитор",
             animStatus1: "Ожидание...",
@@ -130,6 +150,34 @@ window.addEventListener('load', () => {
             animStatus3: "2. EDID скопирован! Маскировка...",
             animStatus4: "3. Отправка поддельных данных на ПК...",
             animStatus5: "Готово! Система видит только монитор.",
+            naimTitle: "NAIM - <span class='highlight'>Нейросетевой</span> ассистент",
+            naimSubtitle: "Искусственный интеллект, который помогает вам в прицеливании, анализируя изображение с экрана и двигая мышь с человеческой точностью и плавностью.",
+            naimFeaturesTitle: "Ключевые особенности",
+            naimFeature1: "Движения, неотличимые от человеческих.",
+            naimFeature2: "Не внедряется в процесс игры и не читает память.",
+            naimFeature3: "Максимальная безопасность и защита от обнаружения.",
+            naimFeature4: "Поддержка 1PC и 2PC конфигураций.",
+            naimPricingTitle: "Тарифы",
+            naimPrice7d: "7 дней",
+            naimPrice14d: "14 дней",
+            naimPrice30d: "30 дней",
+            buyButton: "Приобрести",
+            neuralpcTitle: "Мини-компьютер <span class='highlight'>NeuralPC</span>",
+            neuralpcSubtitle: "Компактный и мощный вычислительный блок, созданный для работы с AI-моделями. Работает 'из коробки' без необходимости подключения монитора и периферии.",
+            neuralpcPanelTitle: "Панель управления",
+            neuralpcPanelDesc: "Управляйте всеми функциями NeuralPC через удобный веб-интерфейс с любого устройства — телефона или компьютера. Никаких лишних проводов и мониторов.",
+            neuralpcFeature1: "Удаленное управление и файловый менеджер.",
+            neuralpcFeature2: "Кастомизация интерфейса (RU/EN).",
+            neuralpcFeature3: "Быстрый запуск AI-моделей и скриптов.",
+            neuralpcSetupNote: "<strong>Простая настройка:</strong> при первом включении просто подключитесь к Wi-Fi сети 'NeuralPC' для получения полного доступа к устройству.",
+            neuralpcSpecWifi: "Связь",
+            neuralpcSpecCPU: "CPU",
+            neuralpcSpecRAM: "RAM",
+            neuralpcSpecROM: "ROM",
+            neuralpcSpecIO: "I/O",
+            neuralpcFootnote1: "*С повышенной производительностью.",
+            neuralpcFootnote2: "**Съёмный, можно заменить.",
+            neuralpcPriceLabel: "Цена от:",
         }
     };
 
@@ -267,13 +315,21 @@ window.addEventListener('load', () => {
     function initializeHero() {
         if (!diagramContainer) return;
         const specItems = document.querySelectorAll('.spec-item');
-        const handleFirstDraw = () => {
+        
+        const handleDraw = () => {
             drawConnections();
         };
-
-        diagramContainer.addEventListener('animationend', handleFirstDraw, { once: true });
+    
+        const computedStyle = window.getComputedStyle(diagramContainer);
+    
+        if (computedStyle.opacity === '1') {
+            handleDraw();
+        } else {
+            diagramContainer.addEventListener('animationend', handleDraw, { once: true });
+        }
+    
         window.addEventListener('resize', drawConnections);
-
+    
         if (specItems.length > 0) {
             updateSelection(specItems[0]);
         }
