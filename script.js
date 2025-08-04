@@ -1,11 +1,10 @@
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
 
-    // --- СЛОВАРЬ ДЛЯ ПЕРЕВОДА ---
     const translations = {
         en: {
             pageTitle: "NVision 1.0 - Capture Card for AI",
             navAdvantage: "Advantage",
-            navSpoofer: "Spoofer",
+            navSpoofer: "Security",
             navSpecs: "Specifications",
             navPorts: "In the Box",
             heroTag: "Capture Card for AI",
@@ -40,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             specNameAudio: "Audio Ports",
             specNameMaxCapture: "Capture video",
             specNameHDCP: "HDCP Support",
-            specValueHDCP: "Disabled (2.3 / 1.4)",
+            specValueHDCP: "Yes (2.3 / 1.4)",
             specNameFormat: "Video Format",
             specNameEDID: "EDID Spoofer",
             specValueEDID: "Built-in, automatic",
@@ -70,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ru: {
             pageTitle: "NVision 1.0 - Карта захвата для AI",
             navAdvantage: "Преимущество",
-            navSpoofer: "Spoofer",
+            navSpoofer: "Безопасность",
             navSpecs: "Характеристики",
             navPorts: "Комплектация",
             heroTag: "Карта захвата для AI",
@@ -105,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
             specNameAudio: "Аудио порты",
             specNameMaxCapture: "Запись видео",
             specNameHDCP: "Поддержка HDCP",
-            specValueHDCP: "Отключен (2.3 / 1.4)",
+            specValueHDCP: "Есть (2.3 / 1.4)",
             specNameFormat: "Формат видео",
             specNameEDID: "EDID Spoofer",
             specValueEDID: "Встроенный, автоматический",
@@ -126,7 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
             spooferCard2Text: "Автоматически копирует EDID и т.д. вашего монитора. Для игрового ПК карта захвата и ваш монитор — это <strong>одно и то же устройство.</strong>",
             animGamingPC: "Игровой ПК",
             animYourMonitor: "Ваш Монитор",
-            // Ключи для анимации
             animStatus1: "Ожидание...",
             animStatus2: "1. Копирование данных с монитора...",
             animStatus3: "2. EDID скопирован! Маскировка...",
@@ -135,109 +133,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-
-    // --- ИНИЦИАЛИЗАЦИЯ И НАСТРОЙКА TSPARTICLES ---
     const particlesConfig = {
-        fpsLimit: 30, // Ограничение FPS для экономии ресурсов
+        fpsLimit: 30,
         particles: {
-            number: {
-                value: 80, // Количество частиц
-                density: {
-                    enable: true,
-                    value_area: 800
-                }
-            },
-            color: {
-                value: ["#EAEAEA", "#E54545"] // Цвета частиц: основной и акцентный
-            },
-            shape: {
-                type: "circle" // Форма частиц
-            },
-            opacity: {
-                value: 0.5,
-                random: true,
-            },
-            size: {
-                value: { min: 3, max: 5 }, // Случайный размер от 1 до 3 пикселей
-                random: true,
-            },
-            links: {
-                enable: true, // Включить линии между частицами
-                distance: 150,
-                color: "#888888", // Цвет линий (второстепенный текст)
-                opacity: 0.4,
-                width: 1
-            },
-            move: {
-                enable: true,
-                speed: 1, // Скорость движения
-                direction: "none",
-                random: true,
-                straight: false,
-                out_mode: "out", // Частицы уходят за пределы экрана
-                bounce: false,
-            }
+            number: { value: 80, density: { enable: true, value_area: 800 } },
+            color: { value: ["#EAEAEA", "#E54545"] },
+            shape: { type: "circle" },
+            opacity: { value: 0.5, random: true },
+            size: { value: { min: 3, max: 5 }, random: true },
+            links: { enable: true, distance: 150, color: "#888888", opacity: 0.4, width: 1 },
+            move: { enable: true, speed: 1, direction: "none", random: true, straight: false, out_mode: "out", bounce: false }
         },
         interactivity: {
             detect_on: "canvas",
-            events: {
-                onhover: {
-                    enable: false,
-                    mode: "repulse" // При наведении мыши частицы отталкиваются
-                },
-                onclick: {
-                    enable: false,
-                    mode: "push"
-                },
-                resize: true
-            },
-            modes: {
-                repulse: {
-                    distance: 100,
-                    duration: 0.4
-                },
-                push: {
-                    particles_nb: 4
-                }
-            }
+            events: { onhover: { enable: false, mode: "repulse" }, onclick: { enable: false, mode: "push" }, resize: true },
+            modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
         },
         detectRetina: true
     };
-
     tsParticles.load('particles-js', particlesConfig);
 
-
-    const animationSteps = [
-        { key: 'animStatus1', duration: 2000 },
-        { key: 'animStatus2', duration: 2000 },
-        { key: 'animStatus3', duration: 1000 },
-        { key: 'animStatus4', duration: 2000 },
-        { key: 'animStatus5', duration: 3000 },
-    ];
-
-    function startStatusAnimation(lang) {
-        clearTimeout(statusAnimationTimeout);
-        let currentStep = 0;
-
-        function nextStep() {
-            if (!animStatusTextEl) return;
-            
-            const stepData = animationSteps[currentStep];
-            animStatusTextEl.textContent = translations[lang][stepData.key];
-            
-            currentStep = (currentStep + 1) % animationSteps.length;
-            
-            statusAnimationTimeout = setTimeout(nextStep, stepData.duration);
-        }
-        
-        nextStep();
-    }
-
-    // --- ЛОГИКА ПЕРЕКЛЮЧЕНИЯ ЯЗЫКА ---
     const langSwitcher = document.querySelector('.lang-switcher');
     const langButtons = langSwitcher.querySelectorAll('button');
     const translatableElements = document.querySelectorAll('[data-key]');
-
     const setLanguage = (lang) => {
         translatableElements.forEach(el => {
             const key = el.dataset.key;
@@ -245,58 +163,46 @@ document.addEventListener('DOMContentLoaded', () => {
                 el.innerHTML = translations[lang][key];
             }
         });
-
         const mainPriceEl = document.getElementById('main-price');
         const altPriceEl = document.getElementById('alt-price');
-        
         if (mainPriceEl && altPriceEl) {
             const priceRub = "11 499₽";
             const priceUsd = "149$";
-
             if (lang === 'ru') {
                 mainPriceEl.textContent = priceRub;
                 altPriceEl.textContent = `/ ${priceUsd}`;
-            } else { // en
+            } else {
                 mainPriceEl.textContent = priceUsd;
                 altPriceEl.textContent = `/ ${priceRub}`;
             }
         }
-
         document.documentElement.lang = lang;
         localStorage.setItem('language', lang);
-
         langButtons.forEach(btn => {
             btn.classList.toggle('active', btn.dataset.lang === lang);
         });
     };
-
     langSwitcher.addEventListener('click', (e) => {
         if (e.target.tagName === 'BUTTON') {
             const lang = e.target.dataset.lang;
             setLanguage(lang);
         }
     });
-
     const savedLang = localStorage.getItem('language');
     const userLang = navigator.language || navigator.userLanguage;
     const initialLang = savedLang || (userLang.startsWith('ru') ? 'ru' : 'en');
     setLanguage(initialLang);
 
-
-    // --- ЛОГИКА МОБИЛЬНОЙ НАВИГАЦИИ ---
     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
     const mainNav = document.querySelector('.main-nav');
-
     mobileNavToggle.addEventListener('click', () => {
         document.body.classList.toggle('nav-open');
     });
-
     mainNav.addEventListener('click', (e) => {
         if (e.target.tagName === 'A') {
             document.body.classList.remove('nav-open');
         }
     });
-
 
     const specList = document.getElementById('spec-list');
     const captureInfoDisplay = document.getElementById('capture-info-display');
@@ -361,7 +267,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function initializeHero() {
         if (!diagramContainer) return;
         const specItems = document.querySelectorAll('.spec-item');
-        drawConnections();
+        const handleFirstDraw = () => {
+            drawConnections();
+        };
+
+        diagramContainer.addEventListener('animationend', handleFirstDraw, { once: true });
+        window.addEventListener('resize', drawConnections);
+
         if (specItems.length > 0) {
             updateSelection(specItems[0]);
         }
@@ -374,7 +286,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }
-        window.addEventListener('resize', drawConnections);
     }
 
     initializeHero();
