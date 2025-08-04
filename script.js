@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
             naimPrice14d: "14 days",
             naimPrice30d: "30 days",
             buyButton: "Purchase",
+            buyButtonNVision: "Purchase NVision",
             neuralpcTitle: "Mini PC <span class='highlight'>NeuralPC</span>",
             neuralpcSubtitle: "A compact and powerful computing unit designed for AI models. Works out-of-the-box without needing a monitor or peripherals.",
             neuralpcPanelTitle: "Control Panel",
@@ -169,6 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
             naimPrice14d: "14 дней",
             naimPrice30d: "30 дней",
             buyButton: "Приобрести",
+            buyButtonNVision: "Приобрести NVision",
             neuralpcTitle: "Мини-компьютер <span class='highlight'>NeuralPC</span>",
             neuralpcSubtitle: "Компактный и мощный вычислительный блок, созданный для работы с AI. Работает 'из коробки' без необходимости подключения периферии.",
             neuralpcPanelTitle: "Панель управления",
@@ -368,4 +370,14 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollElements.forEach(el => {
         observer.observe(el);
     });
+
+    const nodeStreamLink = document.getElementById('node-stream');
+    const neuralPCSection = document.getElementById('naim');
+
+    if (nodeStreamLink && neuralPCSection) {
+        nodeStreamLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            neuralPCSection.scrollIntoView({ behavior: 'smooth' });
+        });
+    }
 });
